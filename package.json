@@ -1,0 +1,11 @@
+{
+  "name": "node_threads",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "A. Feyzullah YILDIZ",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
+}
