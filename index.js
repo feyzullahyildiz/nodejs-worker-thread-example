@@ -2,10 +2,12 @@
 const { Worker, MessageChannel, MessagePort, isMainThread, parentPort } = require('worker_threads');
 const path = require('path');
 const chalk = require('chalk');
+log('isMainThread: ', isMainThread);
 
+process.env.DB_HOST = '127.0.0.1';
 
 const workerExit = function (code) {
-    log(chalk.redBright('worker exited code: ' + code))
+    log(chalk.redBright('worker exited code: ' + code));
 }
 const w1 = createWorker();
 
