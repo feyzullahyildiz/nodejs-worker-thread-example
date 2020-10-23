@@ -1,16 +1,13 @@
 'use strict';
 const { parentPort, threadId, isMainThread } = require('worker_threads');
 const chalk = require('chalk');
-log('worker: ', threadId);
-log('isMainThread: ', isMainThread);
-log('process.env.DB_HOST', process.env.DB_HOST);
 
 parentPort.on('message', async (message) => {
-    console.log('message', message);
+    // console.log('message', message);
     const { type, timeout } = message;
     await startProcess(timeout);
 
-    log('killing myself: ', threadId);
+    // log('process finished');
     process.exit(0);
 });
 function startProcess(timeout) {
